@@ -1,3 +1,16 @@
+## Fuzz Testing Usefulness
+Fuzz testing generates random inputs to rigorously test smart contract functions. It is especially useful for:
+
+* Uncovering Edge Cases: Detects unexpected behaviors and vulnerabilities in extreme or uncommon scenarios.
+* Improving Security: Identifies potential issues like overflows, underflows, or re-entrancy attacks that may not be caught with regular unit testing.
+* Ensuring Robustness: Verifies the contract's resilience by testing it against a wide range of inputs.
+
+### Deployment Scripts Setup:
+The deployment script uses Foundry’s scripting feature to deploy smart contracts across different networks. With the NetworkManager contract, you can easily manage and switch between networks by fetching the appropriate RPC URL. The process involves:
+
+Broadcasting transactions with vm.startBroadcast() to deploy the contract.
+Flexibility in deploying on various networks using Foundry’s command-line tools.
+
 ## Foundry
 
 **Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
@@ -48,7 +61,7 @@ $ anvil
 ### Deploy
 
 ```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+$ forge script script/DeployBank.s.sol --rpc-url <RPC_URL> --private-key <PRIVATE_KEY> --broadcast
 ```
 
 ### Cast
